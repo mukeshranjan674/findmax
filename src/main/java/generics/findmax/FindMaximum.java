@@ -21,11 +21,10 @@ public class FindMaximum<x extends Comparable<x>, y extends Comparable<y>, z ext
 		y maxFloat = getMaxValue(myFloatArray);
 		z maxString = getMaxValue(myStringArray);
 		Object[] max = { maxInteger, maxFloat, maxString };
+		printMax(maxInteger); 
+		printMax(maxFloat);
+		printMax(maxString);
 		return max;
-	}
-
-	public static void main(String[] args) {
-
 	}
 
 	public <E extends Comparable<E>> E getMaxValue(E myArray[]) {
@@ -41,11 +40,18 @@ public class FindMaximum<x extends Comparable<x>, y extends Comparable<y>, z ext
 			if (myArray[2].compareTo(max) > 0)
 				max = myArray[2];
 		}
+		printMax(max);
 		return max;
 	}
+	
 	public <T> T findMaximum(T... args) {
 		Arrays.sort(args);
 		T max = args[args.length - 1];
+		printMax(max);
 		return max;
+	}
+
+	public <E> void printMax( E max) {
+		System.out.println(max);
 	}
 }
