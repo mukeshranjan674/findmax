@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class FindMaximum<E extends Comparable<E>>{
+public class FindMaximum<E extends Comparable<E> >{
 
 	private E[] myArray;
 
