@@ -1,11 +1,7 @@
 package generics.findmax;
 
-/**
- * Hello world!
- *
- */
-public class FindMaximum <E extends Comparable<E>> implements Comparable<E> {
-	
+public class FindMaximum<E extends Comparable<E>> implements Comparable<E> {
+
 	private E[] myArray;
 
 	public FindMaximum(E[] integerArray) {
@@ -13,14 +9,14 @@ public class FindMaximum <E extends Comparable<E>> implements Comparable<E> {
 	}
 
 	public static void main(String[] args) {
-		
+
 	}
 
 	public E getMaxValue() {
 		E max = (E) myArray[0];
-		if( myArray[1].compareTo(max)>0)
+		if (myArray[1].compareTo(max) > 0)
 			max = myArray[1];
-		if(myArray[2].compareTo(max)>0)
+		if (myArray[2].compareTo(max) > 0)
 			max = myArray[2];
 		return max;
 	}
