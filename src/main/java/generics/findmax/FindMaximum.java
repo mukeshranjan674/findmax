@@ -4,19 +4,31 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class FindMaximum<E extends Comparable<E> >{
+public class FindMaximum<x extends Comparable<x>, y extends Comparable<y>, z extends Comparable<z>>{
 
-	private E[] myArray;
-
-	public FindMaximum(E[] integerArray) {
-		this.myArray = integerArray;
+	private x[] myIntegerArray;
+	private y[] myFloatArray;
+	private z[] myStringArray;
+	
+	public FindMaximum(x[] myIntegerArray, y[] myFloatArray, z[] myStringArray) {
+		this.myIntegerArray = myIntegerArray;
+		this.myFloatArray = myFloatArray;
+		this.myStringArray = myStringArray;
+	}
+	
+	public Object[] testMaximum() {
+		x maxInteger = getMaxValue(myIntegerArray);
+		y maxFloat = getMaxValue(myFloatArray);
+		z maxString = getMaxValue(myStringArray);
+		Object[] max = {maxInteger, maxFloat, maxString};
+		return max;
 	}
 
 	public static void main(String[] args) {
 
 	}
 
-	public E getMaxValue() {
+	public <E extends Comparable<E>> E getMaxValue(E myArray[]) {
 		E max = (E) myArray[0];
 		if (max instanceof String) {
 			E[] newArray = myArray.clone();
