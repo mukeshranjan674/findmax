@@ -1,6 +1,6 @@
 package generics.findmax;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -9,8 +9,11 @@ public class FindMaximumTest
 {
   
     @Test
-    public void shouldAnswerWithTrue()
+    public void givenThreeIntegersShouldReturnMaximumAtPositionOne()
     {
-        assertTrue( true );
+    	Integer[] integerArray = {40, 20, 30};
+    	FindMaximum<Integer> findMaximum = new FindMaximum<Integer>(integerArray);
+    	Integer max = findMaximum.getMaxValue();
+        assertEquals(integerArray[0], max);
     }
 }
