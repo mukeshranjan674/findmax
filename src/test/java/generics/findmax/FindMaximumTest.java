@@ -16,4 +16,11 @@ public class FindMaximumTest
     	Integer max = findMaximum.getMaxValue();
         assertEquals(integerArray[0], max);
     }
+    public void givenThreeIntegersShouldReturnMaximumAtPositionTwo()
+    {
+    	Integer[] integerArray = {10, 50, 30};
+    	FindMaximum<Integer> findMaximum = new FindMaximum<Integer>(integerArray);
+    	Integer max = findMaximum.getMaxValue();
+        assertEquals(integerArray[1], max);
+    }
 }
