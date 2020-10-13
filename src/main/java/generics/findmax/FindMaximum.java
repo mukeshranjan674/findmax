@@ -4,23 +4,23 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class FindMaximum<x extends Comparable<x>, y extends Comparable<y>, z extends Comparable<z>>{
+public class FindMaximum<x extends Comparable<x>, y extends Comparable<y>, z extends Comparable<z>> {
 
 	private x[] myIntegerArray;
 	private y[] myFloatArray;
 	private z[] myStringArray;
-	
+
 	public FindMaximum(x[] myIntegerArray, y[] myFloatArray, z[] myStringArray) {
 		this.myIntegerArray = myIntegerArray;
 		this.myFloatArray = myFloatArray;
 		this.myStringArray = myStringArray;
 	}
-	
+
 	public Object[] testMaximum() {
 		x maxInteger = getMaxValue(myIntegerArray);
 		y maxFloat = getMaxValue(myFloatArray);
 		z maxString = getMaxValue(myStringArray);
-		Object[] max = {maxInteger, maxFloat, maxString};
+		Object[] max = { maxInteger, maxFloat, maxString };
 		return max;
 	}
 
@@ -41,6 +41,11 @@ public class FindMaximum<x extends Comparable<x>, y extends Comparable<y>, z ext
 			if (myArray[2].compareTo(max) > 0)
 				max = myArray[2];
 		}
+		return max;
+	}
+	public <T> T findMaximum(T... args) {
+		Arrays.sort(args);
+		T max = args[args.length - 1];
 		return max;
 	}
 }
